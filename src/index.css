@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  --color-navy-950: #060b18;
+  --color-navy-900: #0a1224;
+  --color-navy-800: #101b33;
+  --color-navy-700: #1a2a4a;
+  --color-amber-brand: #f5a524;
+  --color-amber-brand-light: #ffc94d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-navy-950);
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-amber-brand);
+  color: #0a1224;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1224;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2a4a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5a524;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #ffc94d 0%, #f5a524 45%, #ff8a3c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(16, 27, 51, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(245, 165, 36, 0.12);
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(245, 165, 36, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 165, 36, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}

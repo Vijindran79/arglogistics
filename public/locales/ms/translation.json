@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "services": "Perkhidmatan",
+    "quote": "Sebut Harga Segera",
+    "schedules": "Jadual",
+    "coverage": "Liputan",
+    "about": "Kenapa Kami",
+    "contact": "Hubungi",
+    "cta": "Dapatkan Sebut Harga"
+  },
+  "hero": {
+    "badge": "Perkhidmatan Kargo · Malaysia",
+    "title": "Hantar ke mana-mana di dunia,",
+    "titleHighlight": "dengan harga telus dalam Ringgit.",
+    "subtitle": "Kargo laut, udara dan darat dari Malaysia dengan anggaran dalam talian segera, penghaksaan kastam dan penghantaran pintu-ke-pintu — tanpa perlu menunggu panggilan semula.",
+    "ctaQuote": "Dapatkan Sebut Harga Segera",
+    "ctaServices": "Lihat Perkhidmatan",
+    "statCountries": "Negara dilayan",
+    "statShipments": "Penghantaran diuruskan",
+    "statOntime": "Penghantaran tepat masa",
+    "statPorts": "Pelabuhan Malaysia"
+  },
+  "services": {
+    "badge": "Apa yang kami lakukan",
+    "title": "Perkhidmatan kargo untuk pengeksport Malaysia",
+    "subtitle": "Dari satu kotak melalui udara hingga kontena penuh melalui laut dan penghantaran trak ke seluruh Malaysia dan Singapura.",
+    "sea": {
+      "title": "Kargo Laut (FCL & LCL)",
+      "desc": "Penghantaran kontena penuh dan kontena kongsi dari Pelabuhan Klang, Pulau Pinang, Pasir Gudang dan Tanjung Pelepas ke lebih 180 negara.",
+      "p1": "Kontena FCL 20 kaki, 40 kaki dan 40 kaki tinggi",
+      "p2": "Penyatuan LCL mingguan dari Pelabuhan Klang",
+      "p3": "Pelabuhan-ke-pelabuhan atau pintu-ke-pintu termasuk kastam"
+    },
+    "air": {
+      "title": "Kargo Udara",
+      "desc": "Kargo mendesak melalui Kuala Lumpur (KLIA), Pulau Pinang dan Johor Bahru dengan harga berasaskan berat yang boleh anda semak.",
+      "p1": "Pelepasan harian melalui KLIA dan hab serantau",
+      "p2": "Berat boleh cas = yang lebih besar antara sebenar dan volumetrik",
+      "p3": "Lapangan terbang-ke-lapangan terbang atau pintu-ke-pintu penuh"
+    },
+    "land": {
+      "title": "Pengangkutan Darat (FTL & LTL)",
+      "desc": "Perkhidmatan trak ke seluruh Semenanjung Malaysia dan ke Singapura dengan van, trak kotak, lori dan treler 40 kaki.",
+      "p1": "Van 1T hingga treler 40 kaki — apa jua saiz muatan",
+      "p2": "Rangkaian bandar Semenanjung Malaysia + Singapura",
+      "p3": "Pilihan hari yang sama dan hari berikutnya untuk laluan utama"
+    },
+    "warehouse": {
+      "title": "Pergudangan & Penyimpanan",
+      "desc": "Penyimpanan selamat, pemalletan dan pengendalian inventori di Puchong, Selangor dengan tempoh fleksibel.",
+      "p1": "Pilihan storan berikat dan bukan berikat",
+      "p2": "Pemalletan, pembungkusan dan pelabelan",
+      "p3": "Pilih-dan-pak untuk penjual dalam talian"
+    },
+    "customs": {
+      "title": "Perundangan Kastam",
+      "desc": "Pelepasan kastam berlesen untuk import dan eksport, diendalikan sendiri supaya kargo anda tidak tersadai di sempadan.",
+      "p1": "Pengisytiharan import & eksport (K1/K2/K8/K9)",
+      "p2": "Pengelasan kod HS dan nasihat duti",
+      "p3": "SST, permit dan penyelarasan agensi"
+    },
+    "fba": {
+      "title": "Persediaan Amazon FBA",
+      "desc": "Persediaan penghantaran FBA dari Malaysia — pelabelan, pembungkusan dan tempahan terus ke pusat pemenuhan Amazon.",
+      "p1": "Pelabelan FNSKU dan beg poli",
+      "p2": "Pemeriksaan pematuhan kotak dan pallet",
+      "p3": "Tempahan terus ke pusat pemenuhan AS, Eropah dan Jepun"
+    }
+  },
+  "quote": {
+    "badge": "Anggaran segera",
+    "title": "Pengiraan kadar kargo",
+    "subtitle": "Dapatkan anggaran telus dalam Ringgit segera. Kunci kadar ini dan pasukan kami akan mengesahkan tempahan dalam satu hari bekerja.",
+    "modes": {
+      "FCL": "Laut FCL",
+      "LCL": "Laut LCL",
+      "AIR": "Kargo Udara",
+      "LAND": "Darat"
+    },
+    "land": {
+      "FTL": "Trak Penuh (FTL)",
+      "LCL": "Muatan Sebahagian (LTL)"
+    },
+    "origin": "Asal",
+    "originPlaceholder": "cth. Pelabuhan Klang atau Kuala Lumpur",
+    "destination": "Destinasi",
+    "destinationPlaceholder": "cth. Rotterdam atau Singapura",
+    "swap": "Tukar",
+    "container": "Jenis kontena",
+    "vehicle": "Jenis kenderaan",
+    "weight": "Berat (kg)",
+    "volume": "Isipadu (CBM)",
+    "pieces": "Bilangan bungkusan",
+    "dimensions": "Dimensi setiap bungkusan (P × L × T, cm)",
+    "volumetric": "Berat volumetrik",
+    "cbmFromDims": "Isipadu dari dimensi",
+    "calculate": "Kira anggaran",
+    "calculating": "Mengira…",
+    "estimate": "Jumlah anggaran",
+    "indicative": "Anggaran sahaja",
+    "transitLabel": "Angg. transit",
+    "days": "hari",
+    "validUntil": "Anggaran sah sehingga",
+    "disclaimer": "Ini adalah anggaran sistem segera untuk tujuan perbelanjaan, bukan kadar tempahan yang disahkan. Kadar muktamad disahkan oleh pasukan kami selepas butiran kargo anda disemak.",
+    "errorGeneric": "Sesuatu telah berlaku. Sila cuba lagi atau hubungi kami melalui WhatsApp.",
+    "errorLocations": "Sila pilih lokasi yang sah dari cadangan.",
+    "errorSame": "Asal dan destinasi tidak boleh sama.",
+    "lockTitle": "Kunci kadar ini",
+    "lockSubtitle": "Tinggalkan maklumat anda dan kami akan mengesahkan kadar serta pengaturan pengambilan dengan anda.",
+    "successTitle": "Permintaan diterima!",
+    "successSubtitle": "Rujukan anda:",
+    "successWhatsapp": "Teruskan di WhatsApp",
+    "successNew": "Sebut harga baharu",
+    "waGreeting": "Hai ARG Logistics, saya ingin mendapatkan sebut harga.",
+    "waName": "Nama saya",
+    "breakdown": {
+      "base": "Kadar asas",
+      "chargeable": "Berat boleh cas",
+      "volume": "Isipadu kargo",
+      "distance": "Jarak",
+      "fuel": "Pelarasan bahan api",
+      "lane": "Faktor laluan perdagangan",
+      "season": "Faktor bermusim",
+      "subtotal": "Jumlah kecil",
+      "service": "Yuran perkhidmatan ({{percent}}%)",
+      "total": "Jumlah anggaran"
+    },
+    "form": {
+      "name": "Nama penuh",
+      "email": "E-mel",
+      "phone": "Telefon / WhatsApp",
+      "company": "Syarikat (pilihan)",
+      "message": "Nota kargo (pilihan)",
+      "submit": "Sahkan & kunci kadar",
+      "submitting": "Menghantar…"
+    }
+  },
+  "schedules": {
+    "badge": "Perancangan",
+    "title": "Pelepasan mingguan",
+    "subtitle": "Jadual pelayaran dan penerbangan anggaran untuk laluan popular dari Malaysia. Hubungi kami untuk menempah ruang pada pelepasan tertentu.",
+    "sea": "Kargo Laut",
+    "air": "Kargo Udara",
+    "origin": "Pelabuhan / lapangan terbang asal",
+    "destination": "Pelabuhan / lapangan terbang destinasi",
+    "days": "hari",
+    "disclaimer": "Jadual adalah anggaran dan tertakluk kepada perubahan syarikat pengangkut. Pelayaran dan penerbangan yang disahkan akan diberikan bersama tempahan anda.",
+    "table": {
+      "carrier": "Pengangkut",
+      "vessel": "Kapal / Penerbangan",
+      "departure": "Pelepasan",
+      "transit": "Masa transit",
+      "cutoff": "Tamat dokumen"
+    }
+  },
+  "coverage": {
+    "badge": "Destinasi kami",
+    "title": "Liputan global, akar Malaysia",
+    "subtitle": "Perkhidmatan mingguan dari semua pelabuhan dan lapangan terbang utama Malaysia ke setiap rantau perdagangan utama.",
+    "stat": {
+      "ports": "Pelabuhan & lapangan terbang",
+      "cities": "Bandar Malaysia diliputi",
+      "countries": "Negara dicapai",
+      "weekly": "Pelepasan mingguan"
+    },
+    "sea": {
+      "title": "Laluan Kargo Laut",
+      "desc": "FCL & LCL ke Asia, Eropah, Timur Tengah, Amerika dan Oceania"
+    },
+    "air": {
+      "title": "Laluan Kargo Udara",
+      "desc": "Sambungan harian melalui KLIA ke hab kargo global"
+    },
+    "land": {
+      "title": "Domestik & Singapura",
+      "desc": "Trak FTL & LTL ke seluruh Semenanjung Malaysia dan ke Singapura"
+    },
+    "malaysia": {
+      "title": "Bangga Malaysian",
+      "desc": "Operasi langsung di semua pelabuhan utama Malaysia — kargo boleh diambil di mana-mana sahaja di negara ini."
+    }
+  },
+  "about": {
+    "badge": "Kenapa ARG Logistics",
+    "title": "Penerus kargo yang telus",
+    "p1": "ARG Logistics ialah syarikat perkapalan Malaysia yang berpusat di Puchong, Selangor. Kami mengendalikan penghantaran laut, udara dan darat untuk pengeksport dan pengimport di seluruh Malaysia — daripada penjual dalam talian baharu hingga pengilang mapan.",
+    "p2": "Tidak seperti broker yang menghubungi syarikat pengangkut untuk setiap sebut harga, enjin harga kami mengira anggaran anda segera berdasarkan jarak sebenar, bahan api dan faktor bermusim. Anda melihat perinciannya sebelum membuat keputusan — dalam Ringgit, bukan agakan.",
+    "pricing": {
+      "title": "Harga MYR yang telus",
+      "desc": "Setiap anggaran diperincikan — kadar asas, bahan api, faktor laluan dan musim, serta yuran perkhidmatan kami."
+    },
+    "instant": {
+      "title": "Anggaran dalam talian segera",
+      "desc": "Tidak perlu menunggu panggilan balik. Dapatkan angka dalam beberapa saat, kemudian kuncikan dengan pasukan kami."
+    },
+    "owner": {
+      "title": "Penjagaan oleh pemilik",
+      "desc": "Anda berurusan terus dengan orang yang mengendalikan kargo anda, bukan pusat panggilan."
+    },
+    "customs": {
+      "title": "Pasukan kastam sendiri",
+      "desc": "Broker berlesen menjelaskan barangan anda tanpa perantara atau kelewatan."
+    },
+    "door": {
+      "title": "Pintu-ke-pintu sebenar",
+      "desc": "Kami mengambil dari kilang atau rumah anda dan menghantar terus ke pintu penerima."
+    },
+    "whatsapp": {
+      "title": "Sokongan WhatsApp",
+      "desc": "Satu mesej menjangkau penyelaras sebenar — balasan dalam waktu bekerja, biasanya beberapa minit."
+    },
+    "promise": {
+      "title": "Janji kami",
+      "desc": "Jika kami tidak dapat menandingi sebut harga bertulis yang setaraf pada tahap perkhidmatan yang sama, kami akan memberitahu dengan jujur — dan selalunya masih dapat menjimatkan kos anda melalui laluan atau pembungkusan."
+    }
+  },
+  "contact": {
+    "badge": "Hubungi kami",
+    "title": "Bercakap dengan penyelaras sebenar",
+    "subtitle": "Telefon, e-mel atau WhatsApp — anda akan terus menghubungi pejabat kami di Puchong pada waktu bekerja.",
+    "address": "Alamat pejabat",
+    "hours": "Waktu bekerja",
+    "email": "E-mel",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hai ARG Logistics, saya ingin bertanya tentang penghantaran.",
+    "cta": {
+      "title": "Mahu berbual terus?",
+      "desc": "WhatsAppkan butiran kargo anda — asal, destinasi, berat dan dimensi — untuk balasan pantas.",
+      "button": "Berbual di WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Perkapalan Kargo Malaysia",
+    "blurb": "Kargo laut, udara dan darat dari Malaysia ke seluruh dunia — dengan harga telus segera dan perkhidmatan oleh pemilik.",
+    "explore": "Terokai",
+    "services": "Perkhidmatan",
+    "contact": "Hubungi",
+    "rights": "Hak cipta terpelihara.",
+    "language": "Language / Bahasa / 语言 / மொழி"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "services": "Services",
+    "quote": "Instant Quote",
+    "schedules": "Schedules",
+    "coverage": "Coverage",
+    "about": "Why Us",
+    "contact": "Contact",
+    "cta": "Get a Quote"
+  },
+  "hero": {
+    "badge": "Freight Forwarding · Malaysia",
+    "title": "Ship anywhere in the world,",
+    "titleHighlight": "priced transparently in MYR.",
+    "subtitle": "Sea, air and land freight from Malaysia with instant online estimates, customs clearance and door-to-door delivery — no waiting days for a call back.",
+    "ctaQuote": "Get Instant Quote",
+    "ctaServices": "Explore Services",
+    "statCountries": "Countries served",
+    "statShipments": "Shipments handled",
+    "statOntime": "On-time delivery",
+    "statPorts": "Malaysian ports"
+  },
+  "services": {
+    "badge": "What we do",
+    "title": "Freight services built for Malaysian exporters",
+    "subtitle": "From a single carton by air to full container loads by sea and trucking across Malaysia and Singapore.",
+    "sea": {
+      "title": "Sea Freight (FCL & LCL)",
+      "desc": "Full container and shared container shipping from Port Klang, Penang, Pasir Gudang and Tanjung Pelepas to 180+ countries.",
+      "p1": "FCL 20ft, 40ft and 40ft high cube containers",
+      "p2": "LCL consolidation weekly from Port Klang",
+      "p3": "Port-to-port or door-to-door with customs included"
+    },
+    "air": {
+      "title": "Air Freight",
+      "desc": "Time-critical cargo via Kuala Lumpur (KLIA), Penang and Johor Bahru with chargeable-weight pricing you can verify.",
+      "p1": "Daily departures via KLIA and regional hubs",
+      "p2": "Chargeable weight = greater of actual vs volumetric",
+      "p3": "Airport-to-airport or full door-to-door"
+    },
+    "land": {
+      "title": "Land Transport (FTL & LTL)",
+      "desc": "Trucking across West Malaysia and into Singapore with vans, box trucks, lorries and 40ft trailers.",
+      "p1": "1T van to 40ft trailer — any load size",
+      "p2": "West Malaysia + Singapore city network",
+      "p3": "Same-day and next-day options on key lanes"
+    },
+    "warehouse": {
+      "title": "Warehousing & Storage",
+      "desc": "Secure storage, palletising and inventory handling in Puchong, Selangor with flexible short and long terms.",
+      "p1": "Bonded and non-bonded storage options",
+      "p2": "Palletising, wrapping and labelling",
+      "p3": "Pick-and-pack for online sellers"
+    },
+    "customs": {
+      "title": "Customs Brokerage",
+      "desc": "Licensed customs clearance for import and export, handled in-house so your cargo never sits at the border.",
+      "p1": "Import & export declaration (K1/K2/K8/K9)",
+      "p2": "HS code classification and duty advice",
+      "p3": "SST, permits and agency coordination"
+    },
+    "fba": {
+      "title": "Amazon FBA Prep",
+      "desc": "FBA shipment preparation from Malaysia — labelling, bundling and booking straight to Amazon fulfilment centres.",
+      "p1": "FNSKU labelling and poly-bagging",
+      "p2": "Carton and pallet compliance checks",
+      "p3": "Direct booking to US, EU and JP fulfilment centres"
+    }
+  },
+  "quote": {
+    "badge": "Instant estimate",
+    "title": "Freight rate calculator",
+    "subtitle": "Get an instant transparent estimate in Ringgit. Lock the rate and our team confirms the booking within one working day.",
+    "modes": {
+      "FCL": "Sea FCL",
+      "LCL": "Sea LCL",
+      "AIR": "Air Freight",
+      "LAND": "Land"
+    },
+    "land": {
+      "FTL": "Full Truck (FTL)",
+      "LCL": "Part Load (LTL)"
+    },
+    "origin": "Origin",
+    "originPlaceholder": "e.g. Port Klang or Kuala Lumpur",
+    "destination": "Destination",
+    "destinationPlaceholder": "e.g. Rotterdam or Singapore",
+    "swap": "Swap",
+    "container": "Container type",
+    "vehicle": "Vehicle type",
+    "weight": "Weight (kg)",
+    "volume": "Volume (CBM)",
+    "pieces": "Pieces",
+    "dimensions": "Dimensions per piece (L × W × H, cm)",
+    "volumetric": "Volumetric weight",
+    "cbmFromDims": "Volume from dims",
+    "calculate": "Calculate estimate",
+    "calculating": "Calculating…",
+    "estimate": "Estimated total",
+    "indicative": "Indicative",
+    "transitLabel": "Est. transit",
+    "days": "days",
+    "validUntil": "Estimate valid until",
+    "disclaimer": "This is an instant system estimate for budgeting, not a confirmed booking rate. Final rate is confirmed by our team after reviewing your cargo details.",
+    "errorGeneric": "Something went wrong. Please try again or WhatsApp us directly.",
+    "errorLocations": "Please choose valid locations from the suggestions.",
+    "errorSame": "Origin and destination cannot be the same.",
+    "lockTitle": "Lock this rate",
+    "lockSubtitle": "Leave your details and we will confirm this rate and pickup arrangement with you.",
+    "successTitle": "Request received!",
+    "successSubtitle": "Your reference:",
+    "successWhatsapp": "Continue on WhatsApp",
+    "successNew": "New quote",
+    "waGreeting": "Hello ARG Logistics, I would like a quotation.",
+    "waName": "My name is",
+    "breakdown": {
+      "base": "Base freight",
+      "chargeable": "Chargeable weight",
+      "volume": "Cargo volume",
+      "distance": "Distance",
+      "fuel": "Fuel adjustment",
+      "lane": "Trade lane factor",
+      "season": "Seasonal factor",
+      "subtotal": "Subtotal",
+      "service": "Service fee ({{percent}}%)",
+      "total": "Total estimate"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "company": "Company (optional)",
+      "message": "Cargo notes (optional)",
+      "submit": "Confirm & lock rate",
+      "submitting": "Sending…"
+    }
+  },
+  "schedules": {
+    "badge": "Planning",
+    "title": "Weekly departures",
+    "subtitle": "Indicative sailing and flight schedules for popular lanes from Malaysia. Contact us to book space on a specific departure.",
+    "sea": "Sea Freight",
+    "air": "Air Freight",
+    "origin": "Origin port / airport",
+    "destination": "Destination port / airport",
+    "days": "days",
+    "disclaimer": "Schedules are indicative and subject to carrier changes. Confirmed sailings and flights are provided with your booking.",
+    "table": {
+      "carrier": "Carrier",
+      "vessel": "Vessel / Flight",
+      "departure": "Departure",
+      "transit": "Transit time",
+      "cutoff": "Docs cutoff"
+    }
+  },
+  "coverage": {
+    "badge": "Where we ship",
+    "title": "Global coverage, Malaysian roots",
+    "subtitle": "Weekly services from all major Malaysian ports and airports to every major trade region.",
+    "stat": {
+      "ports": "Ports & airports served",
+      "cities": "Malaysian cities covered",
+      "countries": "Countries reached",
+      "weekly": "Weekly departures"
+    },
+    "sea": {
+      "title": "Sea Freight Lanes",
+      "desc": "FCL & LCL to Asia, Europe, Middle East, Americas and Oceania"
+    },
+    "air": {
+      "title": "Air Freight Lanes",
+      "desc": "Daily connections via KLIA to global cargo hubs"
+    },
+    "land": {
+      "title": "Domestic & Singapore",
+      "desc": "FTL & LTL trucking across Peninsular Malaysia and into Singapore"
+    },
+    "malaysia": {
+      "title": "Proudly Malaysian",
+      "desc": "Direct operations at all major Malaysian seaports — cargo can be collected anywhere in the country."
+    }
+  },
+  "about": {
+    "badge": "Why ARG Logistics",
+    "title": "A forwarder that shows its working",
+    "p1": "ARG Logistics is a Malaysian freight forwarder based in Puchong, Selangor. We handle sea, air and land shipments for exporters and importers across Malaysia — from first-time online sellers to established manufacturers.",
+    "p2": "Unlike brokers who call carriers for every quote, our pricing engine calculates your estimate instantly from real distance, fuel and seasonal factors. You see the breakdown before you commit — in Ringgit, not guesswork.",
+    "pricing": {
+      "title": "Transparent MYR pricing",
+      "desc": "Every estimate itemised — base freight, fuel, lane and season factors, plus our service fee."
+    },
+    "instant": {
+      "title": "Instant online estimates",
+      "desc": "No waiting on callbacks. Get a number in seconds, then lock it with our team."
+    },
+    "owner": {
+      "title": "Owner-operated care",
+      "desc": "You deal directly with the people moving your cargo, not a call centre."
+    },
+    "customs": {
+      "title": "In-house customs team",
+      "desc": "Licensed brokers clear your goods without third-party handoffs or delays."
+    },
+    "door": {
+      "title": "True door-to-door",
+      "desc": "We collect from your factory or home and deliver to the consignee's door."
+    },
+    "whatsapp": {
+      "title": "WhatsApp-first support",
+      "desc": "One message reaches a real coordinator — replies within working hours, usually minutes."
+    },
+    "promise": {
+      "title": "Our promise",
+      "desc": "If we cannot beat a comparable written quote on the same service level, we will tell you honestly — and often still find a way to save you money on routing or packaging."
+    }
+  },
+  "contact": {
+    "badge": "Get in touch",
+    "title": "Talk to a real coordinator",
+    "subtitle": "Call, email or WhatsApp — you will reach our Puchong office directly during working hours.",
+    "address": "Office address",
+    "hours": "Working hours",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hello ARG Logistics, I would like to ask about a shipment.",
+    "cta": {
+      "title": "Prefer to chat right away?",
+      "desc": "WhatsApp us your cargo details — origin, destination, weight and dimensions — for a fast reply.",
+      "button": "Chat on WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Freight Forwarding Malaysia",
+    "blurb": "Sea, air and land freight from Malaysia to the world — with instant transparent pricing and owner-operated service.",
+    "explore": "Explore",
+    "services": "Services",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "language": "Language / Bahasa / 语言 / மொழி"
+  }
+}

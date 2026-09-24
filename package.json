@@ -1,25 +1,33 @@
 {
-  "name": "webapp",
+  "name": "arg-logistics",
+  "private": true,
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:sandbox": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
     "build": "vite build",
-    "preview": "wrangler pages dev dist",
-    "deploy": "npm run build && wrangler pages deploy dist",
-    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name arg-logistics",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
-    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
-    "test": "curl http://localhost:3000",
-    "git:commit": "git add . && git commit -m",
-    "git:status": "git status"
+    "preview": "wrangler pages dev dist --port 3000",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=arg-logistics",
+    "cf-typegen": "wrangler types",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true"
   },
   "dependencies": {
-    "hono": "^4.9.9"
+    "framer-motion": "^12.23.0",
+    "i18next": "^25.7.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^16.5.0"
   },
   "devDependencies": {
-    "@hono/vite-build": "^1.2.0",
-    "@hono/vite-dev-server": "^0.18.2",
+    "@cloudflare/workers-types": "^4.20260702.1",
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.6.3",
     "vite": "^6.3.5",
     "wrangler": "^4.4.0"
   }

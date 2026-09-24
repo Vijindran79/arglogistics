@@ -1,6 +1,12 @@
 # Dependencies
 node_modules/
 
+# Build output
+dist/
+
+# Extracted legacy site bundle (reference only)
+site-src/
+
 # Runtime data
 pids
 *.pid
