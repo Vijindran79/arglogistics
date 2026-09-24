@@ -17,7 +17,7 @@ export default function Hero() {
     <section id="home" className="relative flex min-h-screen flex-col justify-end overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroPort} alt="Container port at dusk" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/40 to-navy-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/40 to-surface" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/60 to-transparent" />
       </div>
 
@@ -36,7 +36,7 @@ export default function Hero() {
             {t('hero.title')}
             <span className="text-gradient block">{t('hero.titleHighlight')}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
             {t('hero.subtitle')}
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
@@ -48,7 +48,7 @@ export default function Hero() {
             </a>
             <a
               href="#services"
-              className="rounded-full border border-white/25 px-8 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-brand hover:text-amber-brand"
+              className="rounded-full border border-line/25 px-8 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-amber-brand hover:text-amber-brand"
             >
               {t('hero.ctaServices')}
             </a>
@@ -66,7 +66,7 @@ export default function Hero() {
               <div className="text-3xl font-black text-white sm:text-4xl">
                 <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">{stat.label}</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">{stat.label}</div>
             </div>
           ))}
         </motion.div>

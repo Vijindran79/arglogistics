@@ -21,26 +21,26 @@ export default function Coverage() {
   ]
 
   return (
-    <section id="coverage" className="relative bg-navy-950 py-24">
+    <section id="coverage" className="relative bg-surface py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-amber-brand">
               {t('coverage.badge')}
             </span>
-            <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">{t('coverage.title')}</h2>
-            <p className="mt-4 text-slate-400">{t('coverage.subtitle')}</p>
+            <h2 className="mt-3 text-3xl font-black text-ink sm:text-5xl">{t('coverage.title')}</h2>
+            <p className="mt-4 text-ink-soft">{t('coverage.subtitle')}</p>
           </div>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08}>
-              <div className="rounded-2xl border border-white/8 bg-navy-900 p-6 text-center transition hover:border-amber-brand/40">
-                <div className="text-4xl font-black text-white">
+              <div className="rounded-2xl border border-line/8 bg-panel p-6 text-center transition hover:border-amber-brand/40">
+                <div className="text-4xl font-black text-ink">
                   <CountUp end={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="mt-2 text-sm text-slate-400">{stat.label}</div>
+                <div className="mt-2 text-sm text-ink-soft">{stat.label}</div>
               </div>
             </Reveal>
           ))}
@@ -49,14 +49,14 @@ export default function Coverage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {regions.map((region, index) => (
             <Reveal key={region.key} delay={index * 0.08}>
-              <div className="h-full rounded-2xl border border-white/8 bg-navy-900 p-6">
-                <h3 className="text-lg font-bold text-white">{t(`coverage.${region.key}.title`)}</h3>
-                <p className="mt-1 text-sm text-slate-400">{t(`coverage.${region.key}.desc`)}</p>
+              <div className="h-full rounded-2xl border border-line/8 bg-panel p-6">
+                <h3 className="text-lg font-bold text-ink">{t(`coverage.${region.key}.title`)}</h3>
+                <p className="mt-1 text-sm text-ink-soft">{t(`coverage.${region.key}.desc`)}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {region.ports.map((port) => (
                     <span
                       key={port}
-                      className="rounded-full border border-white/10 bg-navy-800 px-3 py-1 text-xs font-semibold text-slate-300"
+                      className="rounded-full border border-line/10 bg-raised px-3 py-1 text-xs font-semibold text-ink-mid"
                     >
                       {port}
                     </span>
@@ -68,9 +68,9 @@ export default function Coverage() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="mt-8 rounded-2xl border border-amber-brand/25 bg-gradient-to-r from-navy-900 to-navy-800 p-6">
-            <h3 className="text-lg font-bold text-white">{t('coverage.malaysia.title')}</h3>
-            <p className="mt-1 text-sm text-slate-400">{t('coverage.malaysia.desc')}</p>
+          <div className="mt-8 rounded-2xl border border-amber-brand/25 bg-gradient-to-r from-panel to-raised p-6">
+            <h3 className="text-lg font-bold text-ink">{t('coverage.malaysia.title')}</h3>
+            <p className="mt-1 text-sm text-ink-soft">{t('coverage.malaysia.desc')}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {MALAYSIA_PORTS.map((port) => (
                 <span

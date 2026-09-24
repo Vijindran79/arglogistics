@@ -6,7 +6,8 @@
     "coverage": "Liputan",
     "about": "Kenapa Kami",
     "contact": "Hubungi",
-    "cta": "Dapatkan Sebut Harga"
+    "cta": "Dapatkan Sebut Harga",
+    "theme": "Tukar mod cerah / gelap"
   },
   "hero": {
     "badge": "Perkhidmatan Kargo · Malaysia",
@@ -24,6 +25,7 @@
     "badge": "Apa yang kami lakukan",
     "title": "Perkhidmatan kargo untuk pengeksport Malaysia",
     "subtitle": "Dari satu kotak melalui udara hingga kontena penuh melalui laut dan penghantaran trak ke seluruh Malaysia dan Singapura.",
+    "getRate": "Dapatkan kadar segera",
     "sea": {
       "title": "Kargo Laut (FCL & LCL)",
       "desc": "Penghantaran kontena penuh dan kontena kongsi dari Pelabuhan Klang, Pulau Pinang, Pasir Gudang dan Tanjung Pelepas ke lebih 180 negara.",

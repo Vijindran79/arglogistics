@@ -2,15 +2,16 @@ import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { fetchLocations, fetchRate, submitQuoteLead, type Rate, type ServiceType } from '../lib/api'
+import { onQuoteModeRequest } from '../lib/quoteBus'
 import { formatMoney, whatsappLink } from '../config'
 import Reveal from './Reveal'
 
 type Mode = 'FCL' | 'LCL' | 'AIR' | 'LAND'
 
 const MODES: Array<{ key: Mode; types: ServiceType[] }> = [
+  { key: 'AIR', types: ['AIR'] },
   { key: 'FCL', types: ['FCL'] },
   { key: 'LCL', types: ['LCL'] },
-  { key: 'AIR', types: ['AIR'] },
   { key: 'LAND', types: ['LAND_FTL', 'LAND_LCL'] },
 ]
 
@@ -20,7 +21,7 @@ const VEHICLE_TYPES = ['1T VAN', '3T BOX TRUCK', '10T LORRY', '40FT TRAILER']
 export default function QuoteCalculator() {
   const { t } = useTranslation()
 
-  const [mode, setMode] = useState<Mode>('FCL')
+  const [mode, setMode] = useState<Mode>('AIR')
   const [landLoad, setLandLoad] = useState<'FTL' | 'LCL'>('FTL')
   const [locations, setLocations] = useState<string[]>([])
   const [origin, setOrigin] = useState('')
@@ -56,6 +57,17 @@ export default function QuoteCalculator() {
       cancelled = true
     }
   }, [serviceType])
+
+  useEffect(
+    () =>
+      onQuoteModeRequest((requested) => {
+        setMode(requested)
+        setRate(null)
+        setSubmitted(false)
+        setError('')
+      }),
+    [],
+  )
 
   const volumetricWeight = useMemo(() => {
     const l = parseFloat(length)
@@ -155,11 +167,11 @@ export default function QuoteCalculator() {
     : ''
 
   const inputCls =
-    'w-full rounded-xl border border-white/10 bg-navy-800/80 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-amber-brand/60 focus:ring-2 focus:ring-amber-brand/20'
-  const labelCls = 'mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400'
+    'w-full rounded-xl border border-line/10 bg-raised/80 px-4 py-3 text-sm text-ink placeholder-ink-faint outline-none transition focus:border-amber-brand/60 focus:ring-2 focus:ring-amber-brand/20'
+  const labelCls = 'mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink-soft'
 
   return (
-    <section id="quote" className="relative overflow-hidden bg-navy-900 py-24">
+    <section id="quote" className="relative overflow-hidden bg-panel py-24">
       <div className="grid-pattern absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
@@ -167,14 +179,14 @@ export default function QuoteCalculator() {
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-amber-brand">
               {t('quote.badge')}
             </span>
-            <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">{t('quote.title')}</h2>
-            <p className="mt-4 text-slate-400">{t('quote.subtitle')}</p>
+            <h2 className="mt-3 text-3xl font-black text-ink sm:text-5xl">{t('quote.title')}</h2>
+            <p className="mt-4 text-ink-soft">{t('quote.subtitle')}</p>
           </div>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-navy-950/80 shadow-2xl shadow-black/40 backdrop-blur">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 p-5">
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-3xl border border-line/10 bg-surface/80 shadow-2xl shadow-black/40 backdrop-blur">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/10 p-5">
               <div className="flex flex-wrap gap-2">
                 {MODES.map((m) => (
                   <button
@@ -186,19 +198,19 @@ export default function QuoteCalculator() {
                     className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition ${
                       mode === m.key
                         ? 'bg-amber-brand text-navy-950 shadow-lg shadow-amber-brand/25'
-                        : 'border border-white/10 text-slate-300 hover:border-amber-brand/50 hover:text-amber-brand'
+                        : 'border border-line/10 text-ink-mid hover:border-amber-brand/50 hover:text-amber-brand'
                     }`}
                   >
                     {t(`quote.modes.${m.key}`)}
                   </button>
                 ))}
               </div>
-              <div className="flex overflow-hidden rounded-full border border-white/15 text-xs font-bold">
+              <div className="flex overflow-hidden rounded-full border border-line/15 text-xs font-bold">
                 {(['MYR', 'USD'] as const).map((c) => (
                   <button
                     key={c}
                     onClick={() => setCurrency(c)}
-                    className={`px-3.5 py-1.5 transition ${currency === c ? 'bg-amber-brand text-navy-950' : 'text-slate-300 hover:bg-white/10'}`}
+                    className={`px-3.5 py-1.5 transition ${currency === c ? 'bg-amber-brand text-navy-950' : 'text-ink-mid hover:bg-ink/10'}`}
                   >
                     {c}
                   </button>
@@ -207,7 +219,7 @@ export default function QuoteCalculator() {
             </div>
 
             {mode === 'LAND' && (
-              <div className="flex gap-2 border-b border-white/10 px-5 py-3">
+              <div className="flex gap-2 border-b border-line/10 px-5 py-3">
                 {(['FTL', 'LCL'] as const).map((load) => (
                   <button
                     key={load}
@@ -216,7 +228,7 @@ export default function QuoteCalculator() {
                       setRate(null)
                     }}
                     className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
-                      landLoad === load ? 'bg-white/15 text-white' : 'text-slate-400 hover:text-white'
+                      landLoad === load ? 'bg-ink/15 text-ink' : 'text-ink-soft hover:text-ink'
                     }`}
                   >
                     {t(`quote.land.${load}`)}
@@ -248,7 +260,7 @@ export default function QuoteCalculator() {
                   />
                   <button
                     onClick={swap}
-                    className="shrink-0 rounded-xl border border-white/10 px-3 text-slate-300 transition hover:border-amber-brand/50 hover:text-amber-brand"
+                    className="shrink-0 rounded-xl border border-line/10 px-3 text-ink-mid transition hover:border-amber-brand/50 hover:text-amber-brand"
                     aria-label="Swap"
                     title={t('quote.swap')}
                   >
@@ -275,7 +287,7 @@ export default function QuoteCalculator() {
                         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition ${
                           containerType === c
                             ? 'border-amber-brand bg-amber-brand/10 text-amber-brand'
-                            : 'border-white/10 text-slate-300 hover:border-white/30'
+                            : 'border-line/10 text-ink-mid hover:border-line/30'
                         }`}
                       >
                         {c}
@@ -296,7 +308,7 @@ export default function QuoteCalculator() {
                         className={`rounded-xl border px-3 py-2.5 text-xs font-bold transition ${
                           vehicleType === v
                             ? 'border-amber-brand bg-amber-brand/10 text-amber-brand'
-                            : 'border-white/10 text-slate-300 hover:border-white/30'
+                            : 'border-line/10 text-ink-mid hover:border-line/30'
                         }`}
                       >
                         {v}
@@ -350,7 +362,7 @@ export default function QuoteCalculator() {
                   </div>
                   <div>
                     <label className={labelCls}>
-                      {t('quote.dimensions')} <span className="normal-case text-slate-500">(L × W × H, cm)</span>
+                      {t('quote.dimensions')} <span className="normal-case text-ink-faint">(L × W × H, cm)</span>
                     </label>
                     <div className="flex gap-2">
                       <input type="number" min="0" value={length} onChange={(e) => setLength(e.target.value)} placeholder="L" className={inputCls} />
@@ -363,7 +375,7 @@ export default function QuoteCalculator() {
             </div>
 
             {(volumetricWeight > 0 || cbmFromDims > 0) && mode !== 'FCL' && (
-              <div className="mx-5 mb-4 flex flex-wrap gap-3 rounded-xl bg-white/5 px-4 py-3 text-xs text-slate-300 sm:mx-7">
+              <div className="mx-5 mb-4 flex flex-wrap gap-3 rounded-xl bg-ink/5 px-4 py-3 text-xs text-ink-mid sm:mx-7">
                 {volumetricWeight > 0 && (
                   <span>
                     {t('quote.volumetric')}: <strong className="text-amber-brand">{volumetricWeight.toFixed(1)} kg</strong>
@@ -402,84 +414,84 @@ export default function QuoteCalculator() {
                       <div className="grid gap-8 lg:grid-cols-2">
                         <div>
                           <div className="flex items-baseline justify-between">
-                            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                            <span className="text-xs font-bold uppercase tracking-widest text-ink-soft">
                               {t('quote.estimate')}
                             </span>
                             <span className="rounded-full bg-amber-brand/15 px-3 py-1 text-[11px] font-bold text-amber-brand">
                               {t('quote.indicative')}
                             </span>
                           </div>
-                          <div className="mt-2 text-5xl font-black text-white">
+                          <div className="mt-2 text-5xl font-black text-ink">
                             {formatMoney(rate.price, rate.currency)}
                           </div>
-                          <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300">
-                            <span className="rounded-full bg-white/5 px-3 py-1">
-                              {t('quote.transitLabel')} <strong className="text-white">{rate.transitTime} {t('quote.days')}</strong>
+                          <div className="mt-3 flex flex-wrap gap-2 text-xs text-ink-mid">
+                            <span className="rounded-full bg-ink/5 px-3 py-1">
+                              {t('quote.transitLabel')} <strong className="text-ink">{rate.transitTime} {t('quote.days')}</strong>
                             </span>
-                            <span className="rounded-full bg-white/5 px-3 py-1">
-                              {t('quote.validUntil')} <strong className="text-white">{rate.cutoff}</strong>
+                            <span className="rounded-full bg-ink/5 px-3 py-1">
+                              {t('quote.validUntil')} <strong className="text-ink">{rate.cutoff}</strong>
                             </span>
                           </div>
 
-                          <div className="mt-6 space-y-2 rounded-2xl border border-white/10 bg-navy-900/60 p-5 text-sm">
-                            <div className="flex justify-between text-slate-400">
+                          <div className="mt-6 space-y-2 rounded-2xl border border-line/10 bg-panel/60 p-5 text-sm">
+                            <div className="flex justify-between text-ink-soft">
                               <span>{t('quote.breakdown.base')}</span>
-                              <span className="text-white">{formatMoney(rate.breakdown.base, rate.currency)}</span>
+                              <span className="text-ink">{formatMoney(rate.breakdown.base, rate.currency)}</span>
                             </div>
                             {rate.breakdown.chargeableWeightKg !== undefined && (
-                              <div className="flex justify-between text-slate-400">
+                              <div className="flex justify-between text-ink-soft">
                                 <span>{t('quote.breakdown.chargeable')}</span>
-                                <span className="text-white">{rate.breakdown.chargeableWeightKg} kg</span>
+                                <span className="text-ink">{rate.breakdown.chargeableWeightKg} kg</span>
                               </div>
                             )}
                             {rate.breakdown.volumeCbm !== undefined && (
-                              <div className="flex justify-between text-slate-400">
+                              <div className="flex justify-between text-ink-soft">
                                 <span>{t('quote.breakdown.volume')}</span>
-                                <span className="text-white">{rate.breakdown.volumeCbm} CBM</span>
+                                <span className="text-ink">{rate.breakdown.volumeCbm} CBM</span>
                               </div>
                             )}
-                            <div className="flex justify-between text-slate-400">
+                            <div className="flex justify-between text-ink-soft">
                               <span>{t('quote.breakdown.distance')}</span>
-                              <span className="text-white">{rate.breakdown.distanceKm.toLocaleString()} km</span>
+                              <span className="text-ink">{rate.breakdown.distanceKm.toLocaleString()} km</span>
                             </div>
                             {rate.breakdown.fuelFactor > 1 && (
-                              <div className="flex justify-between text-slate-400">
+                              <div className="flex justify-between text-ink-soft">
                                 <span>{t('quote.breakdown.fuel')}</span>
-                                <span className="text-white">×{rate.breakdown.fuelFactor.toFixed(2)}</span>
+                                <span className="text-ink">×{rate.breakdown.fuelFactor.toFixed(2)}</span>
                               </div>
                             )}
                             {rate.breakdown.laneFactor !== 1 && (
-                              <div className="flex justify-between text-slate-400">
+                              <div className="flex justify-between text-ink-soft">
                                 <span>{t('quote.breakdown.lane')}</span>
-                                <span className="text-white">×{rate.breakdown.laneFactor.toFixed(2)}</span>
+                                <span className="text-ink">×{rate.breakdown.laneFactor.toFixed(2)}</span>
                               </div>
                             )}
                             {rate.breakdown.seasonFactor !== 1 && (
-                              <div className="flex justify-between text-slate-400">
+                              <div className="flex justify-between text-ink-soft">
                                 <span>{t('quote.breakdown.season')}</span>
-                                <span className="text-white">×{rate.breakdown.seasonFactor.toFixed(2)}</span>
+                                <span className="text-ink">×{rate.breakdown.seasonFactor.toFixed(2)}</span>
                               </div>
                             )}
-                            <div className="border-t border-white/10 pt-2" />
-                            <div className="flex justify-between text-slate-400">
+                            <div className="border-t border-line/10 pt-2" />
+                            <div className="flex justify-between text-ink-soft">
                               <span>{t('quote.breakdown.subtotal')}</span>
-                              <span className="text-white">{formatMoney(rate.breakdown.subtotal, rate.currency)}</span>
+                              <span className="text-ink">{formatMoney(rate.breakdown.subtotal, rate.currency)}</span>
                             </div>
-                            <div className="flex justify-between text-slate-400">
+                            <div className="flex justify-between text-ink-soft">
                               <span>{t('quote.breakdown.service', { percent: rate.breakdown.markupPercent })}</span>
-                              <span className="text-white">{formatMoney(rate.breakdown.markupAmount, rate.currency)}</span>
+                              <span className="text-ink">{formatMoney(rate.breakdown.markupAmount, rate.currency)}</span>
                             </div>
                             <div className="flex justify-between text-base font-black text-amber-brand">
                               <span>{t('quote.breakdown.total')}</span>
                               <span>{formatMoney(rate.price, rate.currency)}</span>
                             </div>
                           </div>
-                          <p className="mt-3 text-[11px] leading-relaxed text-slate-500">{t('quote.disclaimer')}</p>
+                          <p className="mt-3 text-[11px] leading-relaxed text-ink-faint">{t('quote.disclaimer')}</p>
                         </div>
 
-                        <div className="rounded-2xl border border-white/10 bg-navy-900/60 p-5">
-                          <h3 className="text-lg font-bold text-white">{t('quote.lockTitle')}</h3>
-                          <p className="mt-1 text-xs text-slate-400">{t('quote.lockSubtitle')}</p>
+                        <div className="rounded-2xl border border-line/10 bg-panel/60 p-5">
+                          <h3 className="text-lg font-bold text-ink">{t('quote.lockTitle')}</h3>
+                          <p className="mt-1 text-xs text-ink-soft">{t('quote.lockSubtitle')}</p>
                           <div className="mt-4 space-y-3">
                             <input value={lead.name} onChange={(e) => setLead({ ...lead, name: e.target.value })} placeholder={t('quote.form.name')} className={inputCls} />
                             <input value={lead.email} onChange={(e) => setLead({ ...lead, email: e.target.value })} placeholder={t('quote.form.email')} type="email" className={inputCls} />
@@ -503,8 +515,8 @@ export default function QuoteCalculator() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <h3 className="mt-4 text-2xl font-black text-white">{t('quote.successTitle')}</h3>
-                        <p className="mt-2 text-sm text-slate-400">
+                        <h3 className="mt-4 text-2xl font-black text-ink">{t('quote.successTitle')}</h3>
+                        <p className="mt-2 text-sm text-ink-soft">
                           {t('quote.successSubtitle')} <span className="font-bold text-amber-brand">{reference}</span>
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -525,7 +537,7 @@ export default function QuoteCalculator() {
                               setSubmitted(false)
                               setLead({ name: '', email: '', phone: '', company: '', message: '' })
                             }}
-                            className="rounded-full border border-white/20 px-7 py-3 text-sm font-bold text-slate-300 transition hover:border-amber-brand hover:text-amber-brand"
+                            className="rounded-full border border-line/20 px-7 py-3 text-sm font-bold text-ink-mid transition hover:border-amber-brand hover:text-amber-brand"
                           >
                             {t('quote.successNew')}
                           </button>

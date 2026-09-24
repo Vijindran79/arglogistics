@@ -31,29 +31,29 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative bg-navy-950 py-24">
+    <section id="contact" className="relative bg-surface py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-amber-brand">
               {t('contact.badge')}
             </span>
-            <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">{t('contact.title')}</h2>
-            <p className="mt-4 text-slate-400">{t('contact.subtitle')}</p>
+            <h2 className="mt-3 text-3xl font-black text-ink sm:text-5xl">{t('contact.title')}</h2>
+            <p className="mt-4 text-ink-soft">{t('contact.subtitle')}</p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {cards.map((card, index) => (
             <Reveal key={card.key} delay={index * 0.08}>
-              <div className="flex h-full items-start gap-4 rounded-2xl border border-white/8 bg-navy-900 p-6 transition hover:border-amber-brand/40">
+              <div className="flex h-full items-start gap-4 rounded-2xl border border-line/8 bg-panel p-6 transition hover:border-amber-brand/40">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-brand text-navy-950">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     {card.icon}
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <div className="text-xs font-bold uppercase tracking-wider text-ink-faint">
                     {t(`contact.${card.key}`)}
                   </div>
                   {card.href ? (
@@ -61,12 +61,12 @@ export default function Contact() {
                       href={card.href}
                       target={card.href.startsWith('http') ? '_blank' : undefined}
                       rel="noreferrer"
-                      className="mt-1 block break-words font-semibold text-white hover:text-amber-brand"
+                      className="mt-1 block break-words font-semibold text-ink hover:text-amber-brand"
                     >
                       {card.value}
                     </a>
                   ) : (
-                    <div className="mt-1 font-semibold leading-relaxed text-white">{card.value}</div>
+                    <div className="mt-1 font-semibold leading-relaxed text-ink">{card.value}</div>
                   )}
                 </div>
               </div>
@@ -75,10 +75,10 @@ export default function Contact() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-col items-center justify-between gap-6 rounded-2xl border border-amber-brand/25 bg-gradient-to-r from-navy-900 to-navy-800 p-8 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-between gap-6 rounded-2xl border border-amber-brand/25 bg-gradient-to-r from-panel to-raised p-8 sm:flex-row">
             <div>
-              <div className="text-xl font-black text-white">{t('contact.cta.title')}</div>
-              <div className="mt-1 text-sm text-slate-400">{t('contact.cta.desc')}</div>
+              <div className="text-xl font-black text-ink">{t('contact.cta.title')}</div>
+              <div className="mt-1 text-sm text-ink-soft">{t('contact.cta.desc')}</div>
             </div>
             <a
               href={whatsappLink(t('contact.whatsappMessage'))}

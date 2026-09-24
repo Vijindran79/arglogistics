@@ -85,10 +85,10 @@ export default function Schedules() {
   )
 
   const selectCls =
-    'w-full rounded-xl border border-white/10 bg-navy-800 px-4 py-2.5 text-sm text-white focus:border-amber-brand focus:outline-none'
+    'w-full rounded-xl border border-line/10 bg-raised px-4 py-2.5 text-sm text-ink focus:border-amber-brand focus:outline-none'
 
   return (
-    <section id="schedules" className="relative bg-navy-900 py-24">
+    <section id="schedules" className="relative bg-panel py-24">
       <div className="grid-pattern absolute inset-0 opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
@@ -96,15 +96,15 @@ export default function Schedules() {
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-amber-brand">
               {t('schedules.badge')}
             </span>
-            <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">{t('schedules.title')}</h2>
-            <p className="mt-4 text-slate-400">{t('schedules.subtitle')}</p>
+            <h2 className="mt-3 text-3xl font-black text-ink sm:text-5xl">{t('schedules.title')}</h2>
+            <p className="mt-4 text-ink-soft">{t('schedules.subtitle')}</p>
           </div>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/8 bg-navy-950/70 p-5 backdrop-blur">
+          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line/8 bg-surface/70 p-5 backdrop-blur">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex rounded-xl bg-navy-800 p-1">
+              <div className="flex rounded-xl bg-raised p-1">
                 {(['SEA', 'AIR'] as const).map((m) => (
                   <button
                     key={m}
@@ -115,7 +115,7 @@ export default function Schedules() {
                       setDestination('')
                     }}
                     className={`rounded-lg px-5 py-2 text-sm font-bold transition ${
-                      mode === m ? 'bg-amber-brand text-navy-950' : 'text-slate-300 hover:text-white'
+                      mode === m ? 'bg-amber-brand text-navy-950' : 'text-ink-mid hover:text-ink'
                     }`}
                   >
                     {t(`schedules.${m.toLowerCase()}`)}
@@ -153,11 +153,11 @@ export default function Schedules() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-white/8">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-line/8">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[720px] text-left text-sm">
                 <thead>
-                  <tr className="bg-navy-800 text-xs uppercase tracking-wider text-slate-400">
+                  <tr className="bg-raised text-xs uppercase tracking-wider text-ink-soft">
                     <th className="px-5 py-4">{t('schedules.table.carrier')}</th>
                     <th className="px-5 py-4">{t('schedules.table.vessel')}</th>
                     <th className="px-5 py-4">{t('schedules.table.departure')}</th>
@@ -165,25 +165,25 @@ export default function Schedules() {
                     <th className="px-5 py-4">{t('schedules.table.cutoff')}</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5 bg-navy-950/80">
+                <tbody className="divide-y divide-line/5 bg-surface/80">
                   {rows.map((row) => (
-                    <tr key={row.carrier} className="transition hover:bg-white/4">
-                      <td className="px-5 py-4 font-bold text-white">{row.carrier}</td>
+                    <tr key={row.carrier} className="transition hover:bg-ink/4">
+                      <td className="px-5 py-4 font-bold text-ink">{row.carrier}</td>
                       <td className="px-5 py-4 font-mono text-amber-brand">{row.vessel}</td>
-                      <td className="px-5 py-4 text-slate-200">
+                      <td className="px-5 py-4 text-ink-mid">
                         {fmtDay(row.departure)}, {fmtDate(row.departure)}
                       </td>
-                      <td className="px-5 py-4 text-slate-300">
+                      <td className="px-5 py-4 text-ink-mid">
                         {row.transitDays} {t('schedules.days')}
                       </td>
-                      <td className="px-5 py-4 text-slate-400">{fmtDate(row.cutoff)}</td>
+                      <td className="px-5 py-4 text-ink-soft">{fmtDate(row.cutoff)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <p className="mt-4 text-center text-xs text-slate-500">{t('schedules.disclaimer')}</p>
+          <p className="mt-4 text-center text-xs text-ink-faint">{t('schedules.disclaimer')}</p>
         </Reveal>
       </div>
     </section>

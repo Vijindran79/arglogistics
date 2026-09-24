@@ -6,7 +6,8 @@
     "coverage": "Coverage",
     "about": "Why Us",
     "contact": "Contact",
-    "cta": "Get a Quote"
+    "cta": "Get a Quote",
+    "theme": "Toggle light / dark mode"
   },
   "hero": {
     "badge": "Freight Forwarding · Malaysia",
@@ -24,6 +25,7 @@
     "badge": "What we do",
     "title": "Freight services built for Malaysian exporters",
     "subtitle": "From a single carton by air to full container loads by sea and trucking across Malaysia and Singapore.",
+    "getRate": "Get instant rate",
     "sea": {
       "title": "Sea Freight (FCL & LCL)",
       "desc": "Full container and shared container shipping from Port Klang, Penang, Pasir Gudang and Tanjung Pelepas to 180+ countries.",

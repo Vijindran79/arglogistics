@@ -9,6 +9,25 @@
   --color-navy-700: #1a2a4a;
   --color-amber-brand: #f5a524;
   --color-amber-brand-light: #ffc94d;
+  --color-surface: #060b18;
+  --color-panel: #0a1224;
+  --color-raised: #101b33;
+  --color-ink: #ffffff;
+  --color-ink-mid: #cbd5e1;
+  --color-ink-soft: #94a3b8;
+  --color-ink-faint: #64748b;
+  --color-line: #ffffff;
+}
+
+html.light {
+  --color-surface: #f2f5fa;
+  --color-panel: #ffffff;
+  --color-raised: #e9eef6;
+  --color-ink: #0b1526;
+  --color-ink-mid: #3b4a68;
+  --color-ink-soft: #5b6b8c;
+  --color-ink-faint: #8494ab;
+  --color-line: #0b1526;
 }
 
 html {
@@ -17,9 +36,10 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-navy-950);
-  color: #e2e8f0;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -31,10 +51,10 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a1224;
+  background: var(--color-surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a2a4a;
+  background: var(--color-ink-faint);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -53,6 +73,11 @@ body {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(245, 165, 36, 0.12);
+}
+
+html.light .glass {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(11, 21, 38, 0.08);
 }
 
 .grid-pattern {

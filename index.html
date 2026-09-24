@@ -15,6 +15,41 @@
       content="Instant freight estimates for sea, air and land shipments across Malaysia and 180+ countries."
     />
     <meta property="og:type" content="website" />
+    <script>
+      try {
+        if (localStorage.getItem('arg-theme') === 'light') {
+          document.documentElement.classList.add('light')
+        }
+      } catch (e) {}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FreightForwarder",
+        "name": "ARG Logistics",
+        "description": "Freight forwarder in Puchong, Selangor, Malaysia. Sea (FCL/LCL), air and land freight with instant online estimates, customs clearance, warehousing and Amazon FBA preparation.",
+        "url": "https://arg-logistics.pages.dev",
+        "telephone": "+60 12-383 8776",
+        "email": "anna@arglogistics.com.my",
+        "priceRange": "MYR",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "No 3A, Jalan BPU 2, Bandar Puchong Utama",
+          "addressLocality": "Puchong",
+          "addressRegion": "Selangor",
+          "postalCode": "47100",
+          "addressCountry": "MY"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 3.0328, "longitude": 101.6188 },
+        "areaServed": ["Malaysia", "Port Klang", "Penang", "Johor Bahru", "Kota Kinabalu", "Kuching"],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

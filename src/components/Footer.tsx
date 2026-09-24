@@ -17,7 +17,7 @@ export default function Footer() {
   const services = ['services.sea.title', 'services.air.title', 'services.land.title', 'services.warehouse.title', 'services.customs.title', 'services.fba.title']
 
   return (
-    <footer className="border-t border-white/8 bg-navy-950">
+    <footer className="border-t border-line/8 bg-surface">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -26,19 +26,19 @@ export default function Footer() {
                 A
               </div>
               <div>
-                <div className="text-lg font-black leading-tight text-white">{SITE.name}</div>
-                <div className="text-xs text-slate-500">{t('footer.tagline')}</div>
+                <div className="text-lg font-black leading-tight text-ink">{SITE.name}</div>
+                <div className="text-xs text-ink-faint">{t('footer.tagline')}</div>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">{t('footer.blurb')}</p>
+            <p className="mt-4 text-sm leading-relaxed text-ink-soft">{t('footer.blurb')}</p>
           </div>
 
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white">{t('footer.explore')}</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-ink">{t('footer.explore')}</div>
             <ul className="mt-4 space-y-2.5">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-slate-400 transition hover:text-amber-brand">
+                  <a href={link.href} className="text-sm text-ink-soft transition hover:text-amber-brand">
                     {t(link.key)}
                   </a>
                 </li>
@@ -47,11 +47,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white">{t('footer.services')}</div>
+            <div className="text-sm font-bold uppercase tracking-wider text-ink">{t('footer.services')}</div>
             <ul className="mt-4 space-y-2.5">
               {services.map((service) => (
                 <li key={service}>
-                  <a href="#services" className="text-sm text-slate-400 transition hover:text-amber-brand">
+                  <a href="#services" className="text-sm text-ink-soft transition hover:text-amber-brand">
                     {t(service)}
                   </a>
                 </li>
@@ -60,8 +60,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="text-sm font-bold uppercase tracking-wider text-white">{t('footer.contact')}</div>
-            <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
+            <div className="text-sm font-bold uppercase tracking-wider text-ink">{t('footer.contact')}</div>
+            <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
               <li className="leading-relaxed">{SITE.address}</li>
               <li>
                 <a href={`mailto:${SITE.contactEmail}`} className="transition hover:text-amber-brand">
@@ -78,11 +78,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 sm:flex-row">
-          <div className="text-xs text-slate-500">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line/8 pt-8 sm:flex-row">
+          <div className="text-xs text-ink-faint">
             © {new Date().getFullYear()} {SITE.name}. {t('footer.rights')}
           </div>
-          <div className="flex items-center gap-2 text-xs text-slate-500">
+          <div className="flex items-center gap-2 text-xs text-ink-faint">
             <span>{t('footer.language')}</span>
             {SUPPORTED_LANGUAGES.map((lng) => (
               <button
@@ -90,7 +90,7 @@ export default function Footer() {
                 type="button"
                 onClick={() => i18n.changeLanguage(lng.code)}
                 className={`rounded-full px-3 py-1 font-bold transition ${
-                  i18n.language === lng.code ? 'bg-amber-brand text-navy-950' : 'text-slate-400 hover:text-white'
+                  i18n.language === lng.code ? 'bg-amber-brand text-navy-950' : 'text-ink-soft hover:text-ink'
                 }`}
               >
                 {lng.short}
